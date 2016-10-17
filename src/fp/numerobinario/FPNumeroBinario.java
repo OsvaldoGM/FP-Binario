@@ -16,6 +16,11 @@ public class FPNumeroBinario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int n;
+        String r;
+        n = pedirNumero();
+        r = calcularBin(n);
+        muestraBin(r);
     }
     public static int pedirNumero(){
         int n;
@@ -27,18 +32,21 @@ public class FPNumeroBinario {
         a = numAleatorio.nextInt();
         */
     }
-    public static int calcularBin(int n){
+    public static String calcularBin(int n){
         String r="";
         int residuo=0;
         while(n!=0){
-               residuo=n%2;
-               
+            residuo=n%2;
+            n=n/2;
+            r = r + residuo;   
                 }
+        return r;
     }
     public static void muestraBin(String b){
         char cad[];
         int a=0;
         cad = b.toCharArray();
+        b="";
         a = cad.length-1;
         while(a>0){
             b=b+cad[a];
